@@ -23,6 +23,8 @@ let winner;  // null = ما في فائز، 1 = X فاز، -1 = O فاز، 'T' =
 
 const squareEls = document.querySelectorAll('.sqr');
 const messageEl = document.querySelector('#message');
+const resetBtnEl = document.querySelector('#reset');
+
 
 
 /*-------------------------------- Functions --------------------------------*/
@@ -117,3 +119,4 @@ squareEls.forEach(square => {
 
 // نشغّل اللعبة أول مرة
 init();
+resetBtnEl.addEventListener('click', init);

@@ -1,20 +1,102 @@
-body {
-  background-color: gainsboro;
-  /* Use a system font, if none are available use an available sans-sarif */
-  font-family: system-ui, sans-serif;
-  margin: 0;
+/* نخلي كل العناصر تتعامل بنفس طريقة القياس */
+* {
+  box-sizing: border-box;
 }
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+
+  background: linear-gradient(135deg, #1b1f3a, #4a4e91, #7a82db);
+  background-size: 400% 400%;
+  animation: bgMove 12s ease infinite;
+
+  font-family: system-ui, sans-serif;
+}
+
+
+@keyframes bgMove {
+  0% { background-position: 0 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+
+
+
+h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+
+#message {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  min-height: 26px; 
+}
+
 
 .board {
   display: flex;
   flex-wrap: wrap;
   width: 325px;
+  margin-bottom: 20px;
 }
+
 
 .sqr {
   width: 30%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1/1;    
   border: 3px solid black;
   font-size: 64px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+}
+
+
+.sqr:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.05);
+}
+
+
+#reset {
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#reset:hover {
+  background-color: #444;
+  transform: scale(1.05);
+}
+
+#reset:active {
+  transform: scale(0.95);
+}
+
+#message {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 0 0 6px #000;
 }
